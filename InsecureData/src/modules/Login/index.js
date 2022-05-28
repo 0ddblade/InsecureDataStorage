@@ -8,7 +8,6 @@
 
  import React,{useState,useEffect} from 'react';
  import {
-   StatusBar,
    StyleSheet,
    Text,
    View,
@@ -22,30 +21,15 @@
    const [password, setPassword] = useState("");
    const [spinner, setSpinner] = useState(false);
    const [isVarified, setIsVarified] = useState("");
-  // const {clickHandler} = props;
-  //  useEffect(() => {
-  //   console.log(props.key);
-  // });
  
    var SharedPreferences = require('react-native-shared-preferences');
    const loginHandler =()=> {
-    //props.clickHandler(true);
-   // alert(101);
     
      if(email && password){
       validate(email,password);
      }else{
        alert("Please check email and password!");
      }
-    
-    //  setInterval(() => {
-    //   setSpinner(false);
-    //   props.clickHandler(true);
-    //   setEmail("");
-    //   setPassword("");
-    // }, 20000);
-   
-    
    };
    const getValueHandler =()=> {
     SharedPreferences.getItems(["email","password"], function(values){
@@ -77,10 +61,6 @@
         return () => {
           clearTimeout(timer);
         }
-     
-     // setEmail({ email: x });
-     // setIsVarified("Email is Correct");
-      //console.log("Email is Correct");
     }
   }
 

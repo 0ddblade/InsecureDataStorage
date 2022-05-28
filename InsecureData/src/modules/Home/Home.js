@@ -8,7 +8,6 @@
 
  import React,{useState} from 'react';
  import {
-   StatusBar,
    StyleSheet,
    Text,
    View,
@@ -30,7 +29,6 @@
  
    const tranjectionHandler = async()=>{
 
-   // https://blog.logrocket.com/using-axios-react-native-manage-api-requests/
     if(isSelected===true && name && accountNum && ifscCode && purpose){
 
       try {
@@ -53,21 +51,14 @@
       let Acc_Detail= {name,accountNum,ifscCode,purpose}
       RNFS.writeFile(path, JSON.stringify(Acc_Detail), 'utf8')
         .then((success) => {
-          //console.log('Success');
           alert('successfully transfer!')
         })
         .catch((err) => {
-         // console.log(err.message);
           alert('err.message');
         });
-        // setName(name);
-        // setAccountNum(accountNum);
-        // setIfscCode(ifscCode);
-        // setPurpose(purpose);
       alert("Process succesfully done.")
 
     }else{
-      //alert(name+" /"+accountNum+" /"+ifscCode+" /"+purpose);
       if(name && accountNum && ifscCode && purpose){
         alert("Process succesfully done.");
         clearData();
@@ -77,20 +68,6 @@
       }
  
     }
-
-    // try{
-    //   const key = await AsyncStorage.setItem('Account_number', '0754329827337')
-    //   alert('Data successfully saved');
-    // }catch(e){
-    //   alert('Failed to save the data to the storage');
-    // }
-
-   // const key = await AsyncStorage.getItem('STORAGE_KEY');
-  // alert(key);
-    // if(isSelected===true){
-    //   alert("Process succesfully done.")
-    // }
-   // await AsyncStorage.clear()
    };
 
    const clearData = () => {
@@ -101,15 +78,12 @@
   }
 
    const rememberMeHandler =(isclicked) =>{
-    setSelection(isclicked)
-   // console.log('REsult--------------0');
-   // console.log(isclicked);
+    setSelection(isclicked);
    }
 
    const StorageDataViewHandler = async()=>{
       try{
         const key = await AsyncStorage.getItem('Account_number');
-     //  const key = await AsyncStorage.getAllKeys();
         alert(key);
       }catch(e){
         alert('Failed to fetch the data from storage');
@@ -117,17 +91,12 @@
    }
 
    const StorageDataClearHandler = async()=>{
-    try{
-      await AsyncStorage.clear();
-      clearData();
-      alert('Storage successfully cleared!');
-    }catch(e){
-      alert('Failed to clear the storage.');
-    }
+   alert("comming soon");
    }
 
    const logoutHandler =()=>{
-    props.clickHandler(false);
+    //props.clickHandler(false);
+    alert("comming soon");
    }
 
    return(
